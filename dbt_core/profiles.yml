@@ -1,0 +1,10 @@
+dbt_core:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: dbt-core-478014
+      dataset: "{{ env_var('DBT_DBNAME', 'dbt_dw') }}"
+      threads: 4
+      keyfile: C:\python\dbt-core\dbt-core-478014-ef9be294c0c2.json

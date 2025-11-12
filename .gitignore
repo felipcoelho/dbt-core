@@ -1,1 +1,7 @@
 dbt-core-478014-ef9be294c0c2.json
+venv/
+dbt_core/target/
+dbt_core/packages/
+dbt_core/logs/
+logs/
+dbt_core/.env
