@@ -31,6 +31,24 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   dbt_core:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    # Config indicated by + and applies to all files under models/staging/
+    staging:
+      schema: staging
+      materialized: table
+      tags: ['staging']
+    
+    intermediate:
+      schema: null
+      materialized: ephemeral
+      tags: ['intermediate']
+    
+    marts:
+      schema: marts
+      materialized: table
+      tags: ['marts']
+
+seeds:
+  dbt_core:
+    schema: seeds
+    tags: ['seeds']
+    
